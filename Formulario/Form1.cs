@@ -125,7 +125,63 @@ namespace Formulario
 
         private void button2_Click(object sender, EventArgs e)
         {
+            using (MySqlConnection Conexao = new MySqlConnection("Server=127.0.0.1,Port=3306;Database=pedidos;User=root;Password="))
+            {
 
+                Conexao.Open();
+                using(MySqlCommand cmd= Conexao.CreateCommand())
+                {
+                    cmd.CommandText = "INSER INTO cliente(nome, documento, datacontrato, ncontrato, cep, endereco, numero, bairro, cidade, estado, celular, email, obs, situacao, valor)" +
+                        "VALUES (@nome, @documento, @datacontrato, @ncontrato, @cep, @endereco, @numero, @bairro, @cidade, @estado, @celular, @email, @obs, @situacao, @valor)";
+                    cmd.Parameters.AddWithValue("nome", txtNome);
+                    cmd.Parameters.AddWithValue("documento", maskCPF);
+                    cmd.Parameters.AddWithValue("datacontrato", maskDATA);
+                    cmd.Parameters.AddWithValue("ncontrato", maskContrato);
+                    cmd.Parameters.AddWithValue("cep", maskCEP);
+                    cmd.Parameters.AddWithValue("endereco", txtEndereco);
+                    cmd.Parameters.AddWithValue("numero", maskN);
+                    cmd.Parameters.AddWithValue("bairro", cBoxBairro);
+                    cmd.Parameters.AddWithValue("cidade", CboxCidade);
+                    cmd.Parameters.AddWithValue("estado", cBoxEstado);
+                    cmd.Parameters.AddWithValue("celular", maskCelular);
+                    cmd.Parameters.AddWithValue("email", txtEmail);
+                    cmd.Parameters.AddWithValue("obs", txtObs);
+                    cmd.Parameters.AddWithValue("valor", txtValor);
+                }
+                MessageBox.Show("ok");
+
+            }
+        }
+        private void SalvarClienteMysql()
+        {
+
+            using (MySqlConnection Conexao = new MySqlConnection("Server=127.0.0.1,Port=3306;Database=pedidos;User=root;Password="))
+            {
+
+                Conexao.Open();
+                using (MySqlCommand cmd = Conexao.CreateCommand())
+                {
+                    cmd.CommandText = "INSER INTO cliente(nome, documento, datacontrato, ncontrato, cep, endereco, numero, bairro, cidade, estado, celular, email, obs, situacao, valor)" +
+                        "VALUES (@nome, @documento, @datacontrato, @ncontrato, @cep, @endereco, @numero, @bairro, @cidade, @estado, @celular, @email, @obs, @situacao, @valor)";
+                    cmd.Parameters.AddWithValue("nome", txtNome);
+                    cmd.Parameters.AddWithValue("documento", maskCPF);
+                    cmd.Parameters.AddWithValue("datacontrato", maskDATA);
+                    cmd.Parameters.AddWithValue("ncontrato", maskContrato);
+                    cmd.Parameters.AddWithValue("cep", maskCEP);
+                    cmd.Parameters.AddWithValue("endereco", txtEndereco);
+                    cmd.Parameters.AddWithValue("numero", maskN);
+                    cmd.Parameters.AddWithValue("bairro", cBoxBairro);
+                    cmd.Parameters.AddWithValue("cidade", CboxCidade);
+                    cmd.Parameters.AddWithValue("estado", cBoxEstado);
+                    cmd.Parameters.AddWithValue("celular", maskCelular);
+                    cmd.Parameters.AddWithValue("email", txtEmail);
+                    cmd.Parameters.AddWithValue("obs", txtObs);
+                    cmd.Parameters.AddWithValue("situacao", "@situaçao");
+                    cmd.Parameters.AddWithValue("valor", txtValor);
+                }
+                MessageBox.Show("ok");
+
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

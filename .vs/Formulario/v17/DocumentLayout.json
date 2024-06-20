@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\alyss\\OneDrive\\Documentos\\Projetos\\Formulario\\CadrastoCliente\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6203F0AA-9CA3-447D-959C-E42A229F6BB3}|Formulario\\Formulario.csproj|c:\\users\\alyss\\onedrive\\documentos\\projetos\\formulario\\cadrastocliente\\formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6203F0AA-9CA3-447D-959C-E42A229F6BB3}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6203F0AA-9CA3-447D-959C-E42A229F6BB3}|Formulario\\Formulario.csproj|c:\\users\\alyss\\onedrive\\documentos\\projetos\\formulario\\cadrastocliente\\formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6203F0AA-9CA3-447D-959C-E42A229F6BB3}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\alyss\\OneDrive\\Documentos\\Projetos\\Formulario\\CadrastoCliente\\Formulario\\Form1.cs",
+              "RelativeDocumentMoniker": "Formulario\\Form1.cs",
+              "ToolTip": "C:\\Users\\alyss\\OneDrive\\Documentos\\Projetos\\Formulario\\CadrastoCliente\\Formulario\\Form1.cs [Design]",
+              "RelativeToolTip": "Formulario\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T00:58:47.109Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\alyss\\OneDrive\\Documentos\\Projetos\\Formulario\\CadrastoCliente\\Formulario\\Form1.cs",
+              "RelativeDocumentMoniker": "Formulario\\Form1.cs",
+              "ToolTip": "C:\\Users\\alyss\\OneDrive\\Documentos\\Projetos\\Formulario\\CadrastoCliente\\Formulario\\Form1.cs",
+              "RelativeToolTip": "Formulario\\Form1.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAkwLIAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T00:58:57.932Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

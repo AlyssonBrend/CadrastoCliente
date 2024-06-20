@@ -55,7 +55,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.cBoxEstado = new System.Windows.Forms.ComboBox();
-            this.cBoxEndereço = new System.Windows.Forms.ComboBox();
             this.cBoxBairro = new System.Windows.Forms.ComboBox();
             this.CboxCidade = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,10 +64,11 @@
             this.btSalvar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.maskContrato = new System.Windows.Forms.MaskedTextBox();
-            this.rBtEmAndamendo = new System.Windows.Forms.RadioButton();
-            this.rBtConcluido = new System.Windows.Forms.RadioButton();
-            this.rBtCancelado = new System.Windows.Forms.RadioButton();
+            this.OpAndamendo = new System.Windows.Forms.RadioButton();
+            this.OpConcluido = new System.Windows.Forms.RadioButton();
+            this.OpCancelado = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtEndereco = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -394,44 +394,6 @@
             this.cBoxEstado.TabIndex = 10;
             this.cBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // cBoxEndereço
-            // 
-            this.cBoxEndereço.AutoCompleteCustomSource.AddRange(new string[] {
-            "Alagoas",
-            "Amapá",
-            "Amazonas",
-            "Bahia",
-            "Ceará",
-            "Espírito Santo",
-            "Goiás",
-            "Maranhão",
-            "Mato Grosso",
-            "Mato Grosso do Sul",
-            "Minas Gerais",
-            "Pará",
-            "Paraíba",
-            "Paraná",
-            "Pernambuco",
-            "Piauí",
-            "Rio de Janeiro",
-            "Rio Grande do Norte",
-            "Rio Grande do Sul",
-            "Rondônia",
-            "Roraima",
-            "Santa Catarina",
-            "São Paulo",
-            "Sergipe",
-            "Tocantins"});
-            this.cBoxEndereço.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cBoxEndereço.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cBoxEndereço.FormattingEnabled = true;
-            this.cBoxEndereço.Location = new System.Drawing.Point(139, 263);
-            this.cBoxEndereço.Margin = new System.Windows.Forms.Padding(4);
-            this.cBoxEndereço.Name = "cBoxEndereço";
-            this.cBoxEndereço.Size = new System.Drawing.Size(272, 27);
-            this.cBoxEndereço.TabIndex = 6;
-            this.cBoxEndereço.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
             // cBoxBairro
             // 
             this.cBoxBairro.AutoCompleteCustomSource.AddRange(new string[] {
@@ -619,38 +581,38 @@
             this.maskContrato.TabIndex = 4;
             this.maskContrato.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
-            // rBtEmAndamendo
+            // OpAndamendo
             // 
-            this.rBtEmAndamendo.AutoSize = true;
-            this.rBtEmAndamendo.Location = new System.Drawing.Point(82, 554);
-            this.rBtEmAndamendo.Name = "rBtEmAndamendo";
-            this.rBtEmAndamendo.Size = new System.Drawing.Size(117, 23);
-            this.rBtEmAndamendo.TabIndex = 19;
-            this.rBtEmAndamendo.TabStop = true;
-            this.rBtEmAndamendo.Text = "Em andamento";
-            this.rBtEmAndamendo.UseVisualStyleBackColor = true;
+            this.OpAndamendo.AutoSize = true;
+            this.OpAndamendo.Location = new System.Drawing.Point(82, 554);
+            this.OpAndamendo.Name = "OpAndamendo";
+            this.OpAndamendo.Size = new System.Drawing.Size(117, 23);
+            this.OpAndamendo.TabIndex = 19;
+            this.OpAndamendo.TabStop = true;
+            this.OpAndamendo.Text = "Em andamento";
+            this.OpAndamendo.UseVisualStyleBackColor = true;
             // 
-            // rBtConcluido
+            // OpConcluido
             // 
-            this.rBtConcluido.AutoSize = true;
-            this.rBtConcluido.Location = new System.Drawing.Point(82, 577);
-            this.rBtConcluido.Name = "rBtConcluido";
-            this.rBtConcluido.Size = new System.Drawing.Size(89, 23);
-            this.rBtConcluido.TabIndex = 19;
-            this.rBtConcluido.TabStop = true;
-            this.rBtConcluido.Text = "Concluido";
-            this.rBtConcluido.UseVisualStyleBackColor = true;
+            this.OpConcluido.AutoSize = true;
+            this.OpConcluido.Location = new System.Drawing.Point(82, 577);
+            this.OpConcluido.Name = "OpConcluido";
+            this.OpConcluido.Size = new System.Drawing.Size(89, 23);
+            this.OpConcluido.TabIndex = 19;
+            this.OpConcluido.TabStop = true;
+            this.OpConcluido.Text = "Concluido";
+            this.OpConcluido.UseVisualStyleBackColor = true;
             // 
-            // rBtCancelado
+            // OpCancelado
             // 
-            this.rBtCancelado.AutoSize = true;
-            this.rBtCancelado.Location = new System.Drawing.Point(82, 600);
-            this.rBtCancelado.Name = "rBtCancelado";
-            this.rBtCancelado.Size = new System.Drawing.Size(92, 23);
-            this.rBtCancelado.TabIndex = 19;
-            this.rBtCancelado.TabStop = true;
-            this.rBtCancelado.Text = "Cancelado";
-            this.rBtCancelado.UseVisualStyleBackColor = true;
+            this.OpCancelado.AutoSize = true;
+            this.OpCancelado.Location = new System.Drawing.Point(82, 600);
+            this.OpCancelado.Name = "OpCancelado";
+            this.OpCancelado.Size = new System.Drawing.Size(92, 23);
+            this.OpCancelado.TabIndex = 19;
+            this.OpCancelado.TabStop = true;
+            this.OpCancelado.Text = "Cancelado";
+            this.OpCancelado.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -672,6 +634,15 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtEndereco
+            // 
+            this.txtEndereco.Location = new System.Drawing.Point(142, 264);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(261, 26);
+            this.txtEndereco.TabIndex = 4;
+            this.txtEndereco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -679,15 +650,15 @@
             this.BackgroundImage = global::Formulario.Properties.Resources.Screenshot_2024_06_17_21_12_58;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(615, 630);
-            this.Controls.Add(this.rBtCancelado);
-            this.Controls.Add(this.rBtConcluido);
-            this.Controls.Add(this.rBtEmAndamendo);
+            this.Controls.Add(this.OpCancelado);
+            this.Controls.Add(this.OpConcluido);
+            this.Controls.Add(this.OpAndamendo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CboxCidade);
             this.Controls.Add(this.cBoxBairro);
-            this.Controls.Add(this.cBoxEndereço);
             this.Controls.Add(this.cBoxEstado);
             this.Controls.Add(this.maskCelular);
+            this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.maskContrato);
             this.Controls.Add(this.maskDATA);
             this.Controls.Add(this.maskCEP);
@@ -727,6 +698,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -764,7 +736,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.ComboBox cBoxEstado;
-        private System.Windows.Forms.ComboBox cBoxEndereço;
         private System.Windows.Forms.ComboBox cBoxBairro;
         private System.Windows.Forms.ComboBox CboxCidade;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -774,10 +745,11 @@
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskContrato;
-        private System.Windows.Forms.RadioButton rBtEmAndamendo;
-        private System.Windows.Forms.RadioButton rBtConcluido;
-        private System.Windows.Forms.RadioButton rBtCancelado;
+        private System.Windows.Forms.RadioButton OpAndamendo;
+        private System.Windows.Forms.RadioButton OpConcluido;
+        private System.Windows.Forms.RadioButton OpCancelado;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox txtEndereco;
     }
 }
 
