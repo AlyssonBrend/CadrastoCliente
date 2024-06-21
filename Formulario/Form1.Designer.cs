@@ -43,7 +43,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.maskCPF = new System.Windows.Forms.MaskedTextBox();
@@ -60,15 +60,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtImagem = new System.Windows.Forms.Button();
             this.btExcluirFoto = new System.Windows.Forms.Button();
-            this.Btexcluir = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.maskContrato = new System.Windows.Forms.MaskedTextBox();
             this.OpAndamendo = new System.Windows.Forms.RadioButton();
             this.OpConcluido = new System.Windows.Forms.RadioButton();
             this.OpCancelado = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtEndereco = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,14 +223,14 @@
             this.txtObs.TabIndex = 13;
             this.txtObs.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txtCodigo
+            // txtId
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(214, 47);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(54, 26);
-            this.txtCodigo.TabIndex = 0;
-            this.txtCodigo.TabStop = false;
+            this.txtId.Location = new System.Drawing.Point(214, 47);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(54, 26);
+            this.txtId.TabIndex = 0;
+            this.txtId.TabStop = false;
             // 
             // txtNome
             // 
@@ -258,6 +257,7 @@
             this.maskCPF.Name = "maskCPF";
             this.maskCPF.Size = new System.Drawing.Size(112, 26);
             this.maskCPF.TabIndex = 2;
+            this.maskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.maskCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // maskN
@@ -505,7 +505,7 @@
             // 
             // btExcluirFoto
             // 
-            this.btExcluirFoto.BackColor = System.Drawing.Color.OrangeRed;
+            this.btExcluirFoto.BackColor = System.Drawing.Color.Silver;
             this.btExcluirFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btExcluirFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btExcluirFoto.FlatAppearance.BorderSize = 0;
@@ -521,26 +521,6 @@
             this.btExcluirFoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btExcluirFoto.UseVisualStyleBackColor = false;
             this.btExcluirFoto.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // Btexcluir
-            // 
-            this.Btexcluir.BackColor = System.Drawing.Color.OrangeRed;
-            this.Btexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Btexcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btexcluir.FlatAppearance.BorderSize = 0;
-            this.Btexcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btexcluir.Image = global::Formulario.Properties.Resources.icons8_x_16;
-            this.Btexcluir.Location = new System.Drawing.Point(432, 594);
-            this.Btexcluir.Margin = new System.Windows.Forms.Padding(4);
-            this.Btexcluir.Name = "Btexcluir";
-            this.Btexcluir.Size = new System.Drawing.Size(77, 29);
-            this.Btexcluir.TabIndex = 0;
-            this.Btexcluir.TabStop = false;
-            this.Btexcluir.Text = "Excluir";
-            this.Btexcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Btexcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btexcluir.UseVisualStyleBackColor = false;
-            this.Btexcluir.Click += new System.EventHandler(this.button2_Click);
             // 
             // btSalvar
             // 
@@ -614,26 +594,6 @@
             this.OpCancelado.Text = "Cancelado";
             this.OpCancelado.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.OrangeRed;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Formulario.Properties.Resources.icons8_x_16;
-            this.button2.Location = new System.Drawing.Point(296, 594);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 29);
-            this.button2.TabIndex = 0;
-            this.button2.TabStop = false;
-            this.button2.Text = "Excluir";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(142, 264);
@@ -642,6 +602,26 @@
             this.txtEndereco.Size = new System.Drawing.Size(261, 26);
             this.txtEndereco.TabIndex = 4;
             this.txtEndereco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.OrangeRed;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Formulario.Properties.Resources.icons8_x_16;
+            this.button1.Location = new System.Drawing.Point(443, 597);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 29);
+            this.button1.TabIndex = 0;
+            this.button1.TabStop = false;
+            this.button1.Text = "Excluir";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -667,11 +647,10 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtObs);
             this.Controls.Add(this.btSalvar);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.Btexcluir);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btExcluirFoto);
             this.Controls.Add(this.BtImagem);
             this.Controls.Add(this.label8);
@@ -724,7 +703,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtObs;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox maskCPF;
@@ -741,15 +720,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtImagem;
         private System.Windows.Forms.Button btExcluirFoto;
-        private System.Windows.Forms.Button Btexcluir;
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskContrato;
         private System.Windows.Forms.RadioButton OpAndamendo;
         private System.Windows.Forms.RadioButton OpConcluido;
         private System.Windows.Forms.RadioButton OpCancelado;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MaskedTextBox txtEndereco;
+        private System.Windows.Forms.Button button1;
     }
 }
 

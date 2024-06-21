@@ -1,11 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Formulario",
     "\\Formulario\\bin",
     "\\Formulario\\obj",
     "\\Formulario\\Properties",
     "\\Formulario\\Resources"
   ],
-  "SelectedNode": "\\Formulario.sln",
+  "SelectedNode": "\\Formulario\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
