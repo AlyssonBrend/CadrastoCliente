@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -57,7 +55,7 @@
             this.cBoxEstado = new System.Windows.Forms.ComboBox();
             this.cBoxBairro = new System.Windows.Forms.ComboBox();
             this.CboxCidade = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ImgCliente = new System.Windows.Forms.PictureBox();
             this.BtImagem = new System.Windows.Forms.Button();
             this.btExcluirFoto = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
@@ -68,12 +66,17 @@
             this.OpCancelado = new System.Windows.Forms.RadioButton();
             this.txtEndereco = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.OpCnpj = new System.Windows.Forms.RadioButton();
+            this.OpCpf = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgCliente)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(214, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -85,6 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(276, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -95,6 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(144, 241);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -103,20 +108,10 @@
             this.label4.Text = "Endereço ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(214, 77);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "CPF";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(18, 241);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
@@ -128,6 +123,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(419, 242);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -139,6 +135,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(18, 301);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -150,6 +147,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Location = new System.Drawing.Point(249, 301);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
@@ -161,6 +159,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Location = new System.Drawing.Point(18, 364);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
@@ -172,6 +171,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Location = new System.Drawing.Point(146, 364);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
@@ -183,6 +183,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Location = new System.Drawing.Point(419, 301);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
@@ -191,20 +192,10 @@
             this.label13.Text = "Estado";
             this.label13.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(18, 556);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 19);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Situação ";
-            this.label14.Click += new System.EventHandler(this.label4_Click);
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Location = new System.Drawing.Point(18, 430);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
@@ -239,6 +230,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(305, 26);
             this.txtNome.TabIndex = 1;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtEmail
             // 
@@ -253,12 +245,12 @@
             // 
             this.maskCPF.Location = new System.Drawing.Point(214, 100);
             this.maskCPF.Margin = new System.Windows.Forms.Padding(4);
-            this.maskCPF.Mask = "000,000,000-00";
             this.maskCPF.Name = "maskCPF";
-            this.maskCPF.Size = new System.Drawing.Size(112, 26);
+            this.maskCPF.Size = new System.Drawing.Size(152, 26);
             this.maskCPF.TabIndex = 2;
             this.maskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.maskCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.maskCPF.Validating += new System.ComponentModel.CancelEventHandler(this.maskCPF_Validating);
             // 
             // maskN
             // 
@@ -277,7 +269,9 @@
             this.maskCEP.Name = "maskCEP";
             this.maskCEP.Size = new System.Drawing.Size(112, 26);
             this.maskCEP.TabIndex = 5;
+            this.maskCEP.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.maskCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.maskCEP.Validating += new System.ComponentModel.CancelEventHandler(this.maskCEP_Validating);
             // 
             // maskCelular
             // 
@@ -291,18 +285,20 @@
             // 
             // maskDATA
             // 
-            this.maskDATA.Location = new System.Drawing.Point(334, 100);
+            this.maskDATA.Location = new System.Drawing.Point(387, 100);
             this.maskDATA.Margin = new System.Windows.Forms.Padding(4);
             this.maskDATA.Mask = "00/00/0000";
             this.maskDATA.Name = "maskDATA";
             this.maskDATA.Size = new System.Drawing.Size(112, 26);
             this.maskDATA.TabIndex = 3;
             this.maskDATA.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.maskDATA.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.maskDATA_TypeValidationCompleted);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(340, 77);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(365, 77);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 19);
@@ -313,6 +309,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Location = new System.Drawing.Point(257, 556);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
@@ -327,7 +324,7 @@
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(112, 26);
-            this.txtValor.TabIndex = 17;
+            this.txtValor.TabIndex = 15;
             this.txtValor.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // cBoxEstado
@@ -393,6 +390,7 @@
             this.cBoxEstado.Size = new System.Drawing.Size(158, 27);
             this.cBoxEstado.TabIndex = 10;
             this.cBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cBoxEstado.Validating += new System.ComponentModel.CancelEventHandler(this.cBoxEstado_Validating);
             // 
             // cBoxBairro
             // 
@@ -470,18 +468,18 @@
             this.CboxCidade.TabIndex = 9;
             this.CboxCidade.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
-            // pictureBox1
+            // ImgCliente
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 20);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 171);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.ImgCliente.BackColor = System.Drawing.Color.Transparent;
+            this.ImgCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImgCliente.Image = global::Formulario.Properties.Resources.avatar_1789663_6401;
+            this.ImgCliente.Location = new System.Drawing.Point(22, 20);
+            this.ImgCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.ImgCliente.Name = "ImgCliente";
+            this.ImgCliente.Size = new System.Drawing.Size(177, 171);
+            this.ImgCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImgCliente.TabIndex = 7;
+            this.ImgCliente.TabStop = false;
             // 
             // BtImagem
             // 
@@ -534,7 +532,7 @@
             this.btSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(74, 29);
-            this.btSalvar.TabIndex = 18;
+            this.btSalvar.TabIndex = 16;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -544,6 +542,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(214, 130);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -564,35 +563,41 @@
             // OpAndamendo
             // 
             this.OpAndamendo.AutoSize = true;
-            this.OpAndamendo.Location = new System.Drawing.Point(82, 554);
+            this.OpAndamendo.BackColor = System.Drawing.Color.Transparent;
+            this.OpAndamendo.Location = new System.Drawing.Point(6, 16);
             this.OpAndamendo.Name = "OpAndamendo";
             this.OpAndamendo.Size = new System.Drawing.Size(117, 23);
-            this.OpAndamendo.TabIndex = 19;
+            this.OpAndamendo.TabIndex = 0;
             this.OpAndamendo.TabStop = true;
             this.OpAndamendo.Text = "Em andamento";
-            this.OpAndamendo.UseVisualStyleBackColor = true;
+            this.OpAndamendo.UseVisualStyleBackColor = false;
+            this.OpAndamendo.CheckedChanged += new System.EventHandler(this.OpAndamendo_CheckedChanged);
             // 
             // OpConcluido
             // 
             this.OpConcluido.AutoSize = true;
-            this.OpConcluido.Location = new System.Drawing.Point(82, 577);
+            this.OpConcluido.BackColor = System.Drawing.Color.Transparent;
+            this.OpConcluido.Location = new System.Drawing.Point(6, 45);
             this.OpConcluido.Name = "OpConcluido";
             this.OpConcluido.Size = new System.Drawing.Size(89, 23);
-            this.OpConcluido.TabIndex = 19;
+            this.OpConcluido.TabIndex = 1;
             this.OpConcluido.TabStop = true;
             this.OpConcluido.Text = "Concluido";
-            this.OpConcluido.UseVisualStyleBackColor = true;
+            this.OpConcluido.UseVisualStyleBackColor = false;
+            this.OpConcluido.CheckedChanged += new System.EventHandler(this.OpConcluido_CheckedChanged);
             // 
             // OpCancelado
             // 
             this.OpCancelado.AutoSize = true;
-            this.OpCancelado.Location = new System.Drawing.Point(82, 600);
+            this.OpCancelado.BackColor = System.Drawing.Color.Transparent;
+            this.OpCancelado.Location = new System.Drawing.Point(118, 35);
             this.OpCancelado.Name = "OpCancelado";
             this.OpCancelado.Size = new System.Drawing.Size(92, 23);
-            this.OpCancelado.TabIndex = 19;
+            this.OpCancelado.TabIndex = 2;
             this.OpCancelado.TabStop = true;
             this.OpCancelado.Text = "Cancelado";
-            this.OpCancelado.UseVisualStyleBackColor = true;
+            this.OpCancelado.UseVisualStyleBackColor = false;
+            this.OpCancelado.CheckedChanged += new System.EventHandler(this.OpCancelado_CheckedChanged);
             // 
             // txtEndereco
             // 
@@ -600,7 +605,7 @@
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(261, 26);
-            this.txtEndereco.TabIndex = 4;
+            this.txtEndereco.TabIndex = 6;
             this.txtEndereco.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // button1
@@ -623,6 +628,44 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
+            // OpCnpj
+            // 
+            this.OpCnpj.AutoSize = true;
+            this.OpCnpj.BackColor = System.Drawing.Color.Transparent;
+            this.OpCnpj.Location = new System.Drawing.Point(274, 75);
+            this.OpCnpj.Name = "OpCnpj";
+            this.OpCnpj.Size = new System.Drawing.Size(65, 23);
+            this.OpCnpj.TabIndex = 20;
+            this.OpCnpj.TabStop = true;
+            this.OpCnpj.Text = "CNPJ";
+            this.OpCnpj.UseVisualStyleBackColor = false;
+            // 
+            // OpCpf
+            // 
+            this.OpCpf.AutoSize = true;
+            this.OpCpf.BackColor = System.Drawing.Color.Transparent;
+            this.OpCpf.Location = new System.Drawing.Point(212, 77);
+            this.OpCpf.Name = "OpCpf";
+            this.OpCpf.Size = new System.Drawing.Size(56, 23);
+            this.OpCpf.TabIndex = 20;
+            this.OpCpf.TabStop = true;
+            this.OpCpf.Text = "CPF";
+            this.OpCpf.UseVisualStyleBackColor = false;
+            this.OpCpf.CheckedChanged += new System.EventHandler(this.OpCpf_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.OpAndamendo);
+            this.groupBox1.Controls.Add(this.OpConcluido);
+            this.groupBox1.Controls.Add(this.OpCancelado);
+            this.groupBox1.Location = new System.Drawing.Point(22, 549);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(216, 77);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Situação";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -630,10 +673,10 @@
             this.BackgroundImage = global::Formulario.Properties.Resources.Screenshot_2024_06_17_21_12_58;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(615, 630);
-            this.Controls.Add(this.OpCancelado);
-            this.Controls.Add(this.OpConcluido);
-            this.Controls.Add(this.OpAndamendo);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.OpCpf);
+            this.Controls.Add(this.OpCnpj);
+            this.Controls.Add(this.ImgCliente);
             this.Controls.Add(this.CboxCidade);
             this.Controls.Add(this.cBoxBairro);
             this.Controls.Add(this.cBoxEstado);
@@ -657,7 +700,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label13);
@@ -665,7 +707,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
@@ -681,7 +722,9 @@
             this.Text = "Formulário";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgCliente)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,7 +735,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -700,7 +742,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.TextBox txtId;
@@ -717,7 +758,7 @@
         private System.Windows.Forms.ComboBox cBoxEstado;
         private System.Windows.Forms.ComboBox cBoxBairro;
         private System.Windows.Forms.ComboBox CboxCidade;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ImgCliente;
         private System.Windows.Forms.Button BtImagem;
         private System.Windows.Forms.Button btExcluirFoto;
         private System.Windows.Forms.Button btSalvar;
@@ -728,6 +769,9 @@
         private System.Windows.Forms.RadioButton OpCancelado;
         private System.Windows.Forms.MaskedTextBox txtEndereco;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton OpCnpj;
+        private System.Windows.Forms.RadioButton OpCpf;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

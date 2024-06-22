@@ -73,6 +73,16 @@ namespace Formulario.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar_1789663_6401 {
+            get {
+                object obj = ResourceManager.GetObject("avatar-1789663_6401", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_caixa_de_seleção_marcada_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-caixa-de-seleção-marcada-16", resourceCulture);

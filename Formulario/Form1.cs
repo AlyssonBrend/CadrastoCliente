@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+
 
 namespace Formulario
 {
@@ -67,13 +70,36 @@ namespace Formulario
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if(txtId.Text=="")
+            {
+                Funcoes.MsgErro("Salve os dados do cliente primeiro");
+            }
+            OpenFileDialog caixa = new OpenFileDialog();
+            caixa.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            caixa.ShowDialog();
+            if (caixa.ShowDialog() == DialogResult.OK)
+            { 
+                ImgCliente.Image = Image.FromFile(caixa.FileName);
+                File.Copy(caixa.FileName, AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text+ ".png");
+            }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
+        //private void button5_Click(object sender, EventArgs e)
+        //{
+        //    if(txtId.Text =="")
+        //    {
+        //        Funcoes.MsgErro("Imagem não cadrastada");
+        //        return;
+        //    }
+        //    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png");
+        //    {
+        //        Funcoes.MsgErro("Imagem não cadrastada");
+        //        return;
+        //    }
+        //    if(Funcoes.Pergunta("Deseja remover a foto?")== false) return;
+        //    ImgCliente.Image = Properties.Resources.avatar_1789663_640;
+        //    File.Delete(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png");
+        //}
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -266,6 +292,93 @@ namespace Formulario
             return false;
         }
 
-       
+        private void OpCpf_CheckedChanged(object sender, EventArgs e)
+        {
+            if (OpCpf.Checked == true)
+            {
+                maskCPF.Mask = "000,000,000-00";
+                maskCPF.Focus();
+            }
+            if (OpCnpj.Checked == true)
+            {
+                maskCPF.Mask = "00,000,000/0000-00";
+                maskCPF.Focus();
+            }
+        }
+
+        private void OpAndamendo_CheckedChanged(object sender, EventArgs e)
+        {
+            txtValor.Focus();
+        }
+
+        private void OpConcluido_CheckedChanged(object sender, EventArgs e)
+        {
+            txtValor.Focus();
+        }
+
+        private void OpCancelado_CheckedChanged(object sender, EventArgs e)
+        {
+            txtValor.Focus();
+        }
+
+        private void maskDATA_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
+        {
+            if (maskDATA.Text == "  /  /")
+                return;
+            try
+            {
+                maskDATA.Text = Convert.ToDateTime(maskDATA.Text).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Data invalida!");
+                //  e.Cancel = true;
+            }
+        }
+
+        private void cBoxEstado_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (cBoxEstado.Text == "")
+                return;
+            else if (cBoxEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("EStado invalido");
+                //   e.Cancel = true;
+            }
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            Funcoes.PriMaiuscula(txtNome);
+        }
+
+        private void maskCEP_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (maskCEP.Text.Length == 0)
+                return;
+            if (maskCEP.Text.Length < 8)
+            {
+                MessageBox.Show("Cep invalido");
+                //e.Cancel = true;
+            }
+        }
+
+        private void maskCPF_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (maskCPF.Text == "")
+                return;
+            if (OpCnpj.Checked == true && maskCPF.Text.Length < 14)
+            {
+                MessageBox.Show("Informação incompleta");
+            }
+            if (OpCpf.Checked == true && maskCPF.Text.Length < 11)
+            {
+                MessageBox.Show("Informação incompleta");
+            }
+
+        }
     }
 }
