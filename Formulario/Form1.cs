@@ -10,10 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Data.OleDb;
 
 
 namespace Formulario
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -70,7 +72,7 @@ namespace Formulario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtId.Text=="")
+            if (txtId.Text == "")
             {
                 Funcoes.MsgErro("Salve os dados do cliente primeiro");
             }
@@ -78,28 +80,28 @@ namespace Formulario
             caixa.Filter = "Arquivos de imagem|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             caixa.ShowDialog();
             if (caixa.ShowDialog() == DialogResult.OK)
-            { 
+            {
                 ImgCliente.Image = Image.FromFile(caixa.FileName);
-                File.Copy(caixa.FileName, AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text+ ".png");
+                File.Copy(caixa.FileName, AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png");
             }
         }
 
-        //private void button5_Click(object sender, EventArgs e)
-        //{
-        //    if(txtId.Text =="")
-        //    {
-        //        Funcoes.MsgErro("Imagem não cadrastada");
-        //        return;
-        //    }
-        //    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png");
-        //    {
-        //        Funcoes.MsgErro("Imagem não cadrastada");
-        //        return;
-        //    }
-        //    if(Funcoes.Pergunta("Deseja remover a foto?")== false) return;
-        //    ImgCliente.Image = Properties.Resources.avatar_1789663_640;
-        //    File.Delete(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png");
-        //}
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                Funcoes.MsgErro("Imagem não cadrastada");
+                return;
+            }
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png"))
+            {
+                Funcoes.MsgErro("Imagem não cadrastada");
+                return;
+            }
+            if (Funcoes.Pergunta("Deseja remover a foto?") == false) return;
+            ImgCliente.Image = Properties.Resources.avatar_1789663_640;
+            File.Delete(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png");
+        }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -118,7 +120,66 @@ namespace Formulario
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (txtId.Text == "")
+                return;
+            btSalvar.Text = "Atualizar";
+            using (OleDbConnection Conexao = new OleDbConnection("Server=127.0.0.1,Port=3306;Database=pedidos;User=root;Password="))
+            {
+                Conexao.Open();
+                using (OleDbCommand cmd = Conexao.CreateCommand())
+                {
+                    if (txtId.Text == "")
+                    {
+                        cmd.CommandText = "INSER INTO cliente(nome, documento, datacontrato, ncontrato, cep, endereco, numero, bairro, cidade, estado, celular, email, obs, situacao, valor)" +
+                       "VALUES (@nome, @documento, @datacontrato, @ncontrato, @cep, @endereco, @numero, @bairro, @cidade, @estado, @celular, @email, @obs, @situacao, @valor)";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "UPDATE cliente SET nome = @nome , documento = @documento, datacontrato = @datacontrato, ncontrato = @ncontrato, cep = @cep, endereco = @endereco, numero = @numero, bairro = @bairro," +
+                            " cidade = @cidade, estado = @estado, celular = @celular, email = @email, obs = @obs, situacao = @situacao, valor = @valor  WHERE id= " + txtId.Text;
+                    }
 
+                    DataTable dt = new DataTable();
+                    using (OleDbDataAdapter da = new OleDbDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                        txtNome.Text = dt.Rows[0]["nome"].ToString();
+                        maskCPF.Text = dt.Rows[0]["documento"].ToString();
+                        // tem q fazer uma vez para cada campo do formulario é o mesmo de salvar, fazer um framwork para ele
+                        // da para fazer por switch
+                        if (dt.Rows[0]["documento"].ToString().Length == 11)
+                        {
+                            OpCpf.Checked = true;
+                        }
+                        else
+                        {
+                            OpCnpj.Checked = true;
+                        }
+                        maskCPF.Text = dt.Rows[0]["documento"].ToString();
+
+                        if (dt.Rows[0]["situacao"].ToString() == "Em Andamento")
+                        {
+                            OpAndamendo.Checked = true;
+                        }
+                        else if (dt.Rows[0]["situacao"].ToString() == "Concluido")
+                        {
+                            OpConcluido.Checked = true;
+                        }
+                        else
+                        {
+                            OpCancelado.Checked = true;
+                        }
+                        if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png"))
+                        {
+                            ImgCliente.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Fotos/" + txtId.Text + ".png");
+                        }
+                        else
+                        {
+                            ImgCliente.Image = Properties.Resources.avatar_1789663_640;
+                        }
+                    }
+                }
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,14 +211,14 @@ namespace Formulario
         {
 
         }
-       
+
         private void button2_Click(object sender, EventArgs e)
         {
             using (MySqlConnection Conexao = new MySqlConnection("Server=127.0.0.1,Port=3306;Database=pedidos;User=root;Password="))
             {
 
                 Conexao.Open();
-                using(MySqlCommand cmd= Conexao.CreateCommand())
+                using (MySqlCommand cmd = Conexao.CreateCommand())
                 {
                     cmd.CommandText = "INSER INTO cliente(nome, documento, datacontrato, ncontrato, cep, endereco, numero, bairro, cidade, estado, celular, email, obs, situacao, valor)" +
                          "VALUES (@nome, @documento, @datacontrato, @ncontrato, @cep, @endereco, @numero, @bairro, @cidade, @estado, @celular, @email, @obs, @situacao, @valor)";
@@ -232,9 +293,12 @@ namespace Formulario
                     }
 
                     cmd.Parameters.AddWithValue("valor", txtValor);
-                    cmd.BeginExecuteNonQuery();
-                    cmd.CommandText = "SELECT @@IDENTITY";
-                    txtId.Text = cmd.ExecuteScalar().ToString();
+                    cmd.ExecuteNonQuery();
+                    if (txtId.Text != "")
+                    {
+                        cmd.CommandText = "SELECT @@IDENTITY";
+                        txtId.Text = cmd.ExecuteScalar().ToString();
+                    }
                 }
 
             }
@@ -242,7 +306,7 @@ namespace Formulario
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) 
+            if (e.KeyCode == Keys.Enter)
             {
                 SendKeys.Send("{TAB}");
                 e.SuppressKeyPress = true;
@@ -250,11 +314,11 @@ namespace Formulario
         }
         private bool Validacoes()
         {
-            if(txtNome.Text == "")
+            if (txtNome.Text == "")
             {
                 MessageBox.Show("Campo nome obrigatorio");
                 txtNome.Focus();
-                return true; 
+                return true;
             }
             if (maskCPF.Text == "")
             {
@@ -281,7 +345,7 @@ namespace Formulario
             }
             try
             {
-                Convert.ToDateTime(maskDATA.Text); 
+                Convert.ToDateTime(maskDATA.Text);
             }
             catch (Exception)
             {
